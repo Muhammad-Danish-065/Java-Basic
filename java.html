@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+
+<body>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates non ea explicabo. Veritatis qui sit ea vero, suscipit rerum, esse est, deserunt animi minima hic dolore praesentium natus rem enim.</p>
+    <div id="main">
+        Welcome to Ztech
+    </div>
+    <div class="main">
+        My name is Danish Khan
+    </div>
+    <div class="main">
+        Hello Everyone
+    </div>
+    <h1 id="Res">Results</h1>
+    <input type="text" name="usename" id="name">
+    <button onclick="Greet()">
+        Greet
+    </button> <br><br>
+    <h1>Calculator</h1>
+    <div class="Greet"></div>
+    <input type="number" name="first" id="first" step="any">
+    <select id="Operators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="number" name="second" id="second" step="any">
+    <button onclick="calculate()">Calculate</button>
+    <input type="number" id="res" readonly>
+    <br><br>
+
+    Name: <i id="result"></i>
+    <button onclick="call()">call</button>
+
+
+
+</body>
+
+<script type="text/JavaScript">
+    //dialog Boxes or functions
+    //alert("error");
+    //console.log ("Danish Bloch");
+    //document.write("Danish Bloch");
+    //prompt("Pleasr Enter Your Name")
+    //confirm("Do you want to leave this page?")
+    //Variables
+    // variables are used to store data . variables are declared with a-z & A-Z . First of all we declare variable then we assing the values to variables
+    //var name;
+    //name="Khan";
+    //name="Bloch"
+    //alert(name);
+    //var name="Khan Bloch";
+    //alert(name);
+
+    //DOM
+    //BY Id
+    //var a = document.getElementById("main");
+    //console.log(a);
+    document.getElementById("main") .innerHTML=" <h1>Welcome to Ztech</h1>";
+    //DOM by class
+    var a = document.getElementsByClassName("main")[0].innerHTML="Hello Everyone";
+    var a = document.getElementsByClassName("main")[1].innerHTML="My name is Danish";
+    //concatinate  variables and string
+    var b = "Hello";
+    var c = "Everyone"
+    var d = b+c;
+    alert(d);
+    //Operators
+    //Operators are the symbol that tells the compiler which arithematic or logical operator to be performed bw operands
+    //+,-,/ and*
+    //e.g operation bw two operands with the help of operator 2+3 are operands and the plus sign is operator name of this operation is addition operation
+    //Arithematic:All the operation that we can do in calculators are Arithematic operations a+b , a-b, a*b, a/b,a%b Modulas, Increment a++,Decrementa--
+    //Logical: It works on logics like two values are false what we can do or one is false and one is true etc
+    //(Logical AND)a&&b, (Logical OR)a||b, (<condition>?<true>:<false>) 2>1 ? "Yes":No"
+    //Ternary: It works on three operands
+    //Assignment: in it we assign values like a=10 
+    //Types=(Simple A=B),(Add and Assignment A+=B),(Sub and Assignment A-=B),(Multiple and Assignment A*=B),(Divide and assignment A/=B),(Modulas and Assignment A%=B is equivalance to A=A%B)
+    //Comparison/Relaton: it is used to comparee values e.g (Equal)a==b, (Not Equal)a!=b, (Greater than)a>b,(Less than)a<b,(Greater than or Equal to)a>=b,(Greater than or Equal to)a<=b
+    //Practical Works
+    var e = 2;
+    var f = 3;
+    var g = e/f;
+    document.getElementById("Res").innerHTML =g;
+    //increment
+    var h=6;
+    h++;
+    document.getElementById("Res").innerHTML =h;
+    //comparison
+    var i = 2;
+    var j = 3;
+    k = i == j;
+    document.getElementById("Res").innerHTML =k;
+    //Logical
+    var l = true;
+    var m = true;
+    var n = l&&m;
+    document.getElementById("Res").innerHTML =n;
+    //Assignment
+    var o =5;
+    var p =6;
+    //p=p+0; p=6+5=11;
+    p += o;
+    document.getElementById("res").innerHTML =p;
+    //Functions
+    //it is a group of code which are reused . Two types of function
+    //1) pre-defined they are defineed at the time of making language
+    //2) User defined they are defined by users according to their needs
+    //syntax of function
+    //function <function name>(parameters) {
+        //function body
+    //}
+    function Greet(params) {
+        var name=  document.getElementById('name').value;
+        //alert(name) ;
+        var string= "Hello "+name;
+        document.getElementsByClassName('Greet')[0].innerHTML = string;
+        
+    }
+    //calculator
+    function calculate() {
+    var opr1 = parseFloat(document.getElementById('first').value);
+    var opr2 = parseFloat(document.getElementById('second').value);
+    var ope = document.getElementById('Operators').value;
+    var res;
+
+    if (ope === '+') {
+        res = opr1 + opr2;
+    }
+    if (ope === '-') {
+        res = opr1 - opr2;
+    }
+    if (ope === '*') {
+        res = opr1 * opr2;
+    }
+    if (ope === '/') {
+        res = opr1 / opr2;
+    }
+    if (ope === '%') {
+        res = opr1 % opr2;
+    }
+    document.getElementById('res').value = res;
+}
+//prompt
+function call() {
+    var name = prompt("Enter Your Name!","")
+    document.getElementById('result').innerHTML = name;
+    
+}
+//Conditional statements are used to change the flow of program
+//two types of conditinal staement first one is if and second one is false and third one is if else if
+var age = 17;
+if (age >=18){
+    document.write("<h3>Yes you can vote</h3>");
+}else if(age == 17){
+    document.write("<h3>wait one more year</h3>");
+}else{
+    document.write("<h3>no you cannot vote</h3>");
+}
+//Arrays
+//It is used to store multiple values into a single variable.
+//declare variables
+
+var car = [];
+cars = ["car0", "car1", "car2", "car3",]
+//[0,1,2,3]
+document.write(cars[1]);
+//loops a loop is used to repeat a  block of code until the specified condition is met
+//for loop
+
+for(count=0; count<10; count++){
+    document.write(count+"<br>/")
+}
+//while loop
+var i = 0;
+while (i<10) {
+    document.write("ztech<br>/") 
+    i++;  
+}
+//for eachloop
+var buses = ["car1","car2","car3","car4","car5",]
+buses.forEach(bus);
+function bus(item) {
+    document.write(item+"<br>/")
+}
+</script>
+
+</html>
